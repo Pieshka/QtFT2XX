@@ -241,6 +241,9 @@ bool FT232::setBaudRate(qint32 baud)
     FT_STATUS ret;
 	FTDIbaudRate = baud;
 
+    /* If we are not open, just return */
+    if(!isOpen()) return true;
+
 	/* Change baud rate
 	 *
 	 * Use mutex here to avoid changing
