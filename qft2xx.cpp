@@ -233,7 +233,7 @@ qint64 FT232::writeData(const char *data, qint64 maxSize)
 		return -1;
 	}
 
-	return ret;
+	return _bytesWritten;
 }
 
 bool FT232::setBaudRate(qint32 baud)
